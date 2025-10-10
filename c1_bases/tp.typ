@@ -4,7 +4,7 @@
   #line(length: 100%)
 
   #text(size: 2em)[
-    TP #1 2025-10-10 --- « Entraînement » (non noté)
+    TP #1 (2025-10-10) --- « entraînement » (non noté)
 
     Rendu _papier_ avant la fin de la séance
   ]
