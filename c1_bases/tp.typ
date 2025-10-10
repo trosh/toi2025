@@ -38,7 +38,7 @@ dont au moins un compilé. Executez-le et confirmez le résultat.
 
 == 4 – Automatisation
 
-Écriver une ligne de Bash pour automatiquement :
+Écrivez une ligne de Bash pour automatiquement :
 - compiler votre code
 - exécuter le programme résultant,
   mais _uniquement si la compilation n'a pas échouée_
