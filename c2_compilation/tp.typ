@@ -26,7 +26,7 @@
 
 + Programmez une commande (soit compilée, soit interprétée avec shebang)
 
-  Par exemple dans `~/.local/bin` ou `~/bin` (pas dans le `$PATH`)
+  Par exemple dans `~/.local/bin` ou `~/bin` (pas déjà dans le `$PATH`)
 
   Par exemple un « cowsay », ou autre manipulation sur les argument, quelque chose
   de sympa
@@ -35,46 +35,47 @@
 
 == 2 - Construire une librairie, avec un Makefile
 
-Dans un dossier dédié, réaliser les fichiers suivants :
++ Dans un dossier dédié, réaliser les fichiers suivants :
 
-#grid(columns: (2fr, 1fr))[
-  ```
-  $ tree tp2
-  tp2
-  ├── build.sh
-  ├── liba
-  │   ├── a.c
-  │   └── a.h
-  ├── libb
-  │   ├── b.c
-  │   └── b.h
-  └── main.c
-  ```
+  #grid(columns: (2fr, 1fr))[
+    ```
+    $ tree tp2
+    tp2
+    ├── build.sh
+    ├── liba
+    │   ├── a.c
+    │   └── a.h
+    ├── libb
+    │   ├── b.c
+    │   └── b.h
+    └── main.c
+    ```
 
-  Dans `main.c`, appeler `func_liba()` puis `func_libb()`.
+    Dans `main.c`, appeler `func_liba()` puis `func_libb()`.
 
-  Les deux fonctions font un `printf` qui affiche `__FUNCTION__`.
-][
-  ```
-  $ ./build.sh
-  ...
-  $ tree tp2
-  tp2
-  $ tree TP/ex2
-  TP/ex2
-  ├── build.sh
-  ├── liba
-  │   ├── a.c
-  │   └── a.h
-  ├── liba.so
-  ├── libb
-  │   ├── b.c
-  │   └── b.h
-  ├── libb.so
-  ├── main
-  └── main.c
-  ```
-]
+    Les deux fonctions font un `printf` qui affiche `__FUNCTION__`.
+  ][
+    tels que :
+    ```
+    $ ./build.sh
+    ...
+    $ tree tp2
+    tp2
+    ├── build.sh
+    ├── liba
+    │   ├── a.c
+    │   └── a.h
+    ├── liba.so
+    ├── libb
+    │   ├── b.c
+    │   └── b.h
+    ├── libb.so
+    ├── main
+    └── main.c
+    ```
+  ]
+
++ Remplacer `build.sh` par un Makefile
 
 == 3 - Ordre de link
 
@@ -84,8 +85,7 @@ uniquement.
 Implémenter `foo` dans liba et libb ; chacune affiche `foo_liba` ou `foo_libb`.
 
 + Est-il possible de link les deux bibliothèques au binaire ?
-
-+ L'ordre a-t-il un effet ?
+  L'ordre a-t-il un effet ?
 
 + Étudier l'utilisation de `LD_DEBUG=symbols`
 
